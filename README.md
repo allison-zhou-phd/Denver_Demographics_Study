@@ -6,10 +6,10 @@ I am a newcomer to Denver, moved here from California at the beginning of 2019. 
 
 I have read that City of Denver has changed significantly in the past 10-15 years.  There are many angles to view these changes.  In this study, I would like to focus on studying the changes from the demographic compositions, specifically:
 
-* Income distirbution over time, to see if certain geographic areas has morphed into new "hot spots" as when redevelopments happen. 
-* Age profile over time, to see if age distribution by buckets has changed over time.  That is, is the city growing "younger" on average? 
+* Income distirbution over time, to see if certain geographic areas has morphed into new "hot spots" when redevelopments happen. 
+* Has the median age of the city changed significantly as more people immigrate to Denver?  That is, is the city growing "younger" on average? 
+* As more people immigrate to Denver, which geographic locations observed the most increase in school age children?  
 * House ownership, to see if the ownership decreases over time as the local real estate market gets "hotter" and gradually "out-of-reach"?
-* Income gaps, to see if income inequality situation got worse over time. 
 
 ## Data
 
@@ -24,4 +24,11 @@ During each 10-year interval, the Bureau contacts 3.5 million households across 
 
 ## Exploratory Data Aanlysis
 
+###  Income Change Over Time
+
+![Test Data](images/test_folium.html)
+
+
 ## Hypothesis Testing
+
+## 
