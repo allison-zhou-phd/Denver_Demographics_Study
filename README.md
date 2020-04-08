@@ -4,12 +4,13 @@
 
 I am a newcomer to Denver, moved here from California at the beginning of 2019.  We are drawn to Colorado by its natural beauty, the diverse culture presence, abundant art and music scenes, and fast growing high-tech industry. 
 
-I have read that City of Denver has changed significantly in the past 10-15 years.  There are many angles to view these changes.  In this study, I would like to focus on studying the changes from the demographic compositions, specifically:
+I have read that City of Denver has changed significantly in the past 10-15 years.  There are many angles to view these changes.  In this study, I would like to focus on changes in the demographic compositions, specifically:
 
-* Income distirbution over time, to see if certain geographic areas has morphed into new "hot spots" when redevelopments happen. 
 * Has the median age of the city changed significantly as more people immigrate to Denver?  That is, is the city growing "younger" on average? 
-* As more people immigrate to Denver, which geographic locations observed the most increase in school age children?  
-* House ownership, to see if the ownership decreases over time as the local real estate market gets "hotter" and gradually "out-of-reach"?
+* House ownership. Denver has observed one of the fastest growth in housing prices in recent years.  Has home ownership decreased over time as the local real estate market gets "hotter" and gradually "out-of-reach"?
+* As more people immigrate to Denver, which areas of the city observed the most increase in school age children?  
+* Income distirbution over time, to see if certain geographic areas has morphed into new "hot spots" when redevelopments happen. 
+
 
 ## Data
 

@@ -1,11 +1,10 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+
 plt.rcParams.update({'font.size':16})
 plt.style.use('ggplot')
-
-def plot_box(df, xlabel, ylabel, out_name):
-    pass
 
 def plot_sideBySide_bar(df, ax, width, labels, Xticklabels, title):
     '''
@@ -31,15 +30,6 @@ def plot_sideBySide_bar(df, ax, width, labels, Xticklabels, title):
     ax.set_title(title)
     return ax
 
-def plot_mean_against_median(df_lst, col_interest, width, data_category, Xtick_labels, title_lst):
-    fig, axs = plt.subplots(2, 1, figsize=(8,6), sharex=True)
-    for idx, ax in enumerate(axs.flatten()):
-        plot_sideBySide_bar(df_lst[idx][col_interest], ax, width, data_category, Xtick_labels, title_lst[idx])
-    fig.tight_layout()
-
-def plot_overlay_hist():
-    pass
-
 if __name__ == "__main__":
     file_lst = ['2006_2010','2010_2014','2014_2018']
     n = len(file_lst)
@@ -48,34 +38,61 @@ if __name__ == "__main__":
     
     mean_lst=[]
     median_lst=[]
+    house_afford=[]
+    house_own=[]
     for file in file_lst:
         df = pd.read_pickle('data/pickled_df_'+file)
         df_interest = df[col_interest]
         mean_lst.append(df_interest.mean())
         median_lst.append(df_interest.median())
+        house_afford.append(df_interest['HOUSE_AFFORD'])
+        house_own.append(df_interest['HOUSE_OWN_PC'])
     df_mean = pd.DataFrame(data = mean_lst, columns=col_interest)
-    df_median = pd.DataFrame(data = median_lst, columns=col_interest)
-    df_lst =[]
-    df_lst.append(df_mean)
-    df_lst.append(df_median)          
-
-    width = 0.2
-#   Plot to compare the mean and median values across 3 different timeframes in history
+    df_median = pd.DataFrame(data = median_lst, columns=col_interest)    
+    
+#   Plot to mean values across 3 different timeframes in history using side-by-side bar charts
 #   Age by gender
-    col_interest = ['MEDIAN_AGE_ALL','MEDIAN_AGE_MALE','MEDIAN_AGE_FEMALE']
-    Xtick_labels = ['All', 'Male', 'Female']
-    title_lst = ['Mean Group Result', 'Median Group Result']
-    plot_mean_against_median(df_lst, col_interest, width, file_lst, Xtick_labels, title_lst)
-    plt.savefig('images/age_by_gender.png')
-#
-    col_interest = ['SCH_AGE_PC','AGE_18_65_PC','RETIRE_PC']
-    Xtick_labels = ['SchoolAge', 'WorkAge', 'RetireAge']
-    title_lst = ['Mean Group Result', 'Median Group Result']
-    plot_mean_against_median(df_lst, col_interest, width, file_lst, Xtick_labels, title_lst)
-    plt.show()
+#     col_age_gender = ['MEDIAN_AGE_ALL','MEDIAN_AGE_MALE','MEDIAN_AGE_FEMALE']
+#     Xtick_labels = ['All', 'Male', 'Female']
+#     width = 0.2
+#     fig1, ax = plt.subplots(1, 1, figsize=(8,4))
+#     df_age_gender = df_mean[col_age_gender]
+#     plot_sideBySide_bar(df_age_gender, ax, width, file_lst, Xtick_labels, "Mean Group Result")
+#     ax.set_ylim([0,50])
+#     plt.savefig('images/age_by_gender.png')
+
+# #   Age by group
+#     col_age_group = ['SCH_AGE_PC','AGE_18_65_PC','RETIRE_PC']
+#     Xtick_labels = ['SchoolAge', 'WorkAge', 'RetireAge']
+#     fig2, ax = plt.subplots(1, 1, figsize=(8,4))
+#     df_age_group = df_mean[col_age_group]
+#     plot_sideBySide_bar(df_age_group, ax, width, file_lst, Xtick_labels, "Mean Group Result")
+#     plt.savefig('images/age_by_group.png')
 
 
+# #   Plot stacked histograms to show the median income b/w male and female over time
+#     col_inc_gender = ['MEDIAN_EARN_MALE','MEDIAN_EARN_FEMALE']
+#     fig3, axs = plt.subplots(3, 1, figsize=(8,8), sharex=True)
+#     for idx, ax in enumerate(axs):
+#         df = pd.read_pickle('data/pickled_df_'+file_lst[idx])
+#         df_inc_gender = df[col_inc_gender]
+#         df_inc_gender.plot.hist(bins=30, alpha=0.7, stacked=True, ax=ax)
+#         ax.axvline(df_inc_gender.median()[0], color='green')
+#         ax.axvline(df_inc_gender.median()[1], color='red', label = 'Female_median')
+#         ax.set_title(file_lst[idx])
+#     fig3.tight_layout(pad=1)
+#     plt.savefig('images/income_by_gender.png')
 
+#  Plot box charts to show the housing affordability over time
+    fig4, axs = plt.subplots(1, 1, figsize=(10,5))
+    df_house_afford = pd.DataFrame(data=house_afford).T
+    df_house_afford.columns = file_lst
+    ax = df_house_afford.plot.box(vert=False, fontsize='small')
+    plt.savefig('images/house_afford.png') 
 
+    df_house_own = pd.DataFrame(data=house_own).T
+    df_house_own.columns = file_lst
+    ax = df_house_own.plot.box(vert=False, fontsize='small')
+    plt.savefig('images/house_own.png') 
 
 
