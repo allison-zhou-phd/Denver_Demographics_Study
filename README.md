@@ -1,35 +1,61 @@
 # Denver Demographic Study
 
-## Background and Motivation 
+## Introduction 
 
 I am a newcomer to Denver, moved here from California at the beginning of 2019.  We are drawn to Colorado by its natural beauty, the diverse culture presence, abundant art and music scenes, and fast growing high-tech industry. 
 
 I have read that City of Denver has changed significantly in the past 10-15 years.  There are many angles to view these changes.  In this study, I would like to focus on changes in the demographic compositions, specifically:
 
-* Has the median age of the city changed significantly as more people immigrate to Denver?  That is, is the city growing "younger" on average? 
-* House ownership. Denver has observed one of the fastest growth in housing prices in recent years.  Has home ownership decreased over time as the local real estate market gets "hotter" and gradually "out-of-reach"?
-* As more people immigrate to Denver, which areas of the city observed the most increase in school age children?  
-* Income distirbution over time, to see if certain geographic areas has morphed into new "hot spots" when redevelopments happen. 
+* According to [Wikipedia](https://en.wikipedia.org/wiki/Denver#Demographics), City and County of Denver observed a net growth of 172,575 in population between year 2000 and 2019.  That is an average annual growth rate of 1.43%.   As the city's number of residents grows, has the median age of the city changed in a significant way?  If most of the population growth are caused by peopole immigrating to Denver in seek of job opportunities, does it mean that the city is growing younger over time? 
+* House ownership. Denver has observed one of the fastest growing housing markets in recent years.  Has home ownership decreased over time as the local real estate market gets "hotter" and gradually "out-of-reach"?
+* With the "me-too" movements, there has been more awareness and demand for gender equality in recent years.  How is Denver doing in this regard?  Is the pay gap between male and female getting smaller over time? 
+* As the city re-invents various neighborhoods, how has the neighborhoods popularity change for different age groups?  
+* As the city grows and industries expand, how has the income levels of different neighborhoods change?   
 
 
-## Data
+## Raw Data
 
-I found the American Community Survey (ACS) data at the U.S. census block group level on the [Denver Open Data Catalog.](https://www.denvergov.org/opendata)  The United States Census Bureau generates the ACS data.  
+I found the American Community Survey (ACS) data at the block group level on the [Denver Open Data Catalog.](https://www.denvergov.org/opendata)  The United States Census Bureau generates the ACS data.  
 
-U.S. Census Bureau conducts comprehensive household surveys every 10 years.  This year (2020) is a census year.  Census blocks are introduced in 1990, and they are the smallest statistical units for which surveys are conducted.  Census blocks are by design small in area and typically bounded by streets in the city and natural landmarks in the suburbs and rural areas.  In more remote areas, census blocks may encompass hundreds of square miles.  In total, there are approximately 8,200,000 blocks in the U.S. and Puerto Rico. 
+Census blocks are introduced in 1990, and they are the smallest statistical units for which surveys are conducted.  Census blocks are by design small in area and typically bounded by streets in the city and natural landmarks in the suburbs and rural areas.  In more remote areas, census blocks may encompass hundreds of square miles.  In total, there are approximately 8,200,000 blocks in the U.S. and Puerto Rico. The census block group is one tier above the census block.  There are roughly 39 blocks per each census group, with each block group generally containing between 600 to 3,000 people.   There are 211,267 block groups in the U.S. and Puerto Rico. In the 2000 census, Census tracts are introduced as the tier above block group.  Census tracts are designed to be homogeneous with respect to population compsitions, social and economic conditions, and living status.  Census tracts generally have between 1,500 and 8,000 people.  In this study, we rely on data at the census block group level.  It is the smallest geographical unit for which the Bureau publishes sample data.  For the City and County of Denver, there are 481 block groups.       
 
-The census block group lies above the census blocks.  There are roughly 39 blocks per each census group, with each block group generally containing between 600 to 3,000 people.   There are 211,267 block groups in the U.S. and Puerto Rico. In the 2000 census, Census tracts are introduced as the tier above block group.  Census tracts are designed to be homogeneous with respect to population compsitions, social and economic conditions, and living status.  Census tracts generally have between 1,500 and 8,000 people.  In this study, we rely on data at the census block group level.  It is the smallest geographical unit for which the Bureau publishes sample data.     
+U.S. Census Bureau conducts comprehensive household surveys every 10 years.  This year (2020) is a census year.  During each 10-year interval, the Bureau contacts 3.5 million households across the country to participate in the annual ACS survey.  The data is then compiled and published as 5-year averages.  The most recent ACS data for the City and County of Denver that I was able to locate is the 2014-2018 average, published on Feb 6, 2020.  I was also able to locate the same ACS survey data for earlier periods 2006-2010 and 2010-2014.  Together these three data sets represents approximately three time periods: before or early stage of the 2008 Financial Crisis (2006-2010), the immediate aftermath and initial recovery stage from the crisis (2010-2014), the more robust recovery and growth stage post the crisis.     
 
-During each 10-year interval, the Bureau contacts 3.5 million households across the country to participate in the annual ACS survey.  The data is then compiled and published as 5-year averages.  The most recent ACS data for the City and County of Denver that I was able to locate is the 2014-2018 average, published on Feb 6, 2020.     
+## Calculated Data and The Approach
 
+To answer the questions raised in the "Introduction" section, I studied the data sets and decided to use the following data series: 
+
+* For Age Study, the raw data has median age by overall population, male and female, and various age buckets breakdowns.  I aggregated the age buckets to three: a) less than 18, b) between 18 and 65, and c) above 65, representing school children, adults and retired people.  In the adults category, I also maintained the age group "20_to_29" in hope to represent the grown-up yet no children category. 
+* For the Housing Affordability Study, the raw data has the median home value, total housing units and the breakdown by owner versus renter occupied.  I chose to divide the median home value by the median household income as an approximation for housing affordability.  For owner occupancy rate, I divided the number of owner-occupied units by total housing units. 
+* For the Gender Pay Equality Study, the raw data has the median earnings by male versus female. 
 
 ## Exploratory Data Aanlysis
 
-###  Income Change Over Time
+###  Age Profile Over Time
 
-![Test Data](images/test_folium.html)
+There are 481 census block groups represented in the data sets.  The bar chart below shows the average of the median age per each group across the three time horizons.   
+
+![Test Data](images/age_by_gender.png)
+
+To help reading the data better, the same information is represented the below table. 
+
+| Median Age | All   | Male  | Female |
+|------------|------:|------:|-------:|
+| 2006-2010  | 36.17 | 35.62 | 36.75  |
+| 2010-2014  | 36.15 | 35.65 | 36.99  |
+| 2014-2018  | 36.67 | 36.31 | 37.37  |
+
+It seems that over the three time horizons, for the overall population as well as each gender group, the median age has gone up, even though marginally.  
+
+Since the mean doesn't quite capture the overall distribution, let's look at the age profile data profile from a different angle - the percentage of population in each bucket groups.  Below is the side-by-side bar chart. 
+
+![Test Data](images/age_by_group.png)
+
+As expected, the adult age group take the chunk of the population.  With this bar chart, it is more obvious that the percentage of retired people in the population has gone up over time, taking about 16% of the overall population in the 2014_2018 period.  This is in comparison with about 11.6% in the previous two time periods.  This seems to indicate that instead of getting younger, the City of Denver seems to be getting older over time.   
+
+###  Housing Profile Over Time
 
 
-## Hypothesis Testing
+###  Pay Equality Profile Over Time
 
-## 
+## Neighborhoods in 
