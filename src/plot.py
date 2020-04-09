@@ -83,16 +83,23 @@ if __name__ == "__main__":
 #     fig3.tight_layout(pad=1)
 #     plt.savefig('images/income_by_gender.png')
 
-#  Plot box charts to show the housing affordability over time
-    fig4, axs = plt.subplots(1, 1, figsize=(10,5))
-    df_house_afford = pd.DataFrame(data=house_afford).T
-    df_house_afford.columns = file_lst
-    ax = df_house_afford.plot.box(vert=False, fontsize='small')
-    plt.savefig('images/house_afford.png') 
+# #  Plot box charts to show the housing affordability over time
+#     fig4, axs = plt.subplots(1, 1, figsize=(10,5))
+#     df_house_afford = pd.DataFrame(data=house_afford).T
+#     df_house_afford.columns = file_lst
+#     ax = df_house_afford.plot.box(vert=False, fontsize='small')
+#     plt.savefig('images/house_afford.png') 
 
-    df_house_own = pd.DataFrame(data=house_own).T
-    df_house_own.columns = file_lst
-    ax = df_house_own.plot.box(vert=False, fontsize='small')
-    plt.savefig('images/house_own.png') 
+#     df_house_own = pd.DataFrame(data=house_own).T
+#     df_house_own.columns = file_lst
+#     ax = df_house_own.plot.box(vert=False, fontsize='small')
+#     plt.savefig('images/house_own.png') 
 
-
+#   Focus on 2014-2018 data, use seaborn to do pairplot and study what correlates with median home value
+    col_interest = ['MEDIAN_HOME_VALUE','MED_HH_INCOME','BACH_HIGHER_PC','HOUSE_OWN_PC','RETIRE_PC']
+    df = pd.read_pickle('data/pickled_df_2014_2018')
+    df_plot = df[col_interest]
+    plt.figure(figsize=(9,9))
+    sns.pairplot(df_plot, palette="husl")
+    #ax.fig.suptitle("Test It", y =1.08)
+    plt.show()

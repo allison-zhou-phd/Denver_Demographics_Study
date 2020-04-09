@@ -18,6 +18,7 @@ def calc_data(df):
     df.eval('AGE_18_65 = TTL_POPULATION_ALL - AGELESS18 - AGE65PLUS', inplace=True)
     df.eval('AGE_18_65_PC = AGE_18_65 / TTL_POPULATION_ALL', inplace=True)
     df.eval('RETIRE_PC = AGE65PLUS / TTL_POPULATION_ALL', inplace=True)
+    df.eval('BACH_HIGHER_PC = BACHELORS_OR_HIGHER_EDU / TTLPOP_25PLUS_EDU', inplace=True)
     df.eval('HOUSE_AFFORD = MEDIAN_HOME_VALUE / MED_HH_INCOME', inplace=True)
     df.eval('HOUSE_OWN_PC = OWNER_OCCUPIED_HU / TTL_HOUSING_UNITS', inplace=True)
     return df
