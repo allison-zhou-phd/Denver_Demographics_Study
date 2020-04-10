@@ -119,3 +119,13 @@ Last, but not the least, the median income change by neighborhoods:
 ### **Median Income** 
 
 ![](images/income_chg.gif)
+
+## Conclusion
+
+From this small study, I've gained better understanding of Denver and its changes over the 2006-2018 time period.  The major findings are: 
+
+* Though we can see from the chart that retired people takes a bigger percentage of the population over time, we cannot draw a conclusion that the city is getting older from the statistical perspective. 
+* Though the house ownership percentage hasn't changed much, there is evidence that the housing affordability is getting worse over time. 
+* Earnings gap between male and female seems to get worse from chart, but again we cannot draw the same conclusion statistically. 
+* Over time, different neighborhoods in Denver gains or loses popularity with different age groups.  Stapleton has been consistently popular with families with children.  Most likely because of the newness, the good school districts, and the open areas and parks. Retired people seems to be drawn to Stapleton too, perhaps because of the same reasons of being closer to nature.  People in their 20s initially seems to like Stapleton, but over time moved on to the downtown near union station areas. 
+* From the income perspective, the Cherry Creek areas have always been where higher income earners reside.  Stapleton seems to be on the rise too.  
