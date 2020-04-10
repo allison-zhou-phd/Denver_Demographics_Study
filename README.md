@@ -8,11 +8,11 @@ I am a newcomer to Denver, moved here from California at the beginning of 2019. 
 
 I have read that City of Denver has changed significantly in the past 10-15 years.  There are many angles to view these changes.  In this study, I would like to focus on changes in the demographic compositions, specifically:
 
-* According to [Wikipedia](https://en.wikipedia.org/wiki/Denver#Demographics), City and County of Denver observed a net growth of 172,575 in population between year 2000 and 2019.  That is an average annual growth rate of 1.43%.   As the city's number of residents grows, has the median age of the city changed in a significant way?  If most of the population growth are caused by peopole immigrating to Denver in seek of job opportunities, does it mean that the city is growing younger over time? 
+* According to [Wikipedia](https://en.wikipedia.org/wiki/Denver#Demographics), the City and County of Denver observed a net growth of 172,575 in population between year 2000 and 2019.  That is an average annual growth rate of 1.43%.   As the city's number of residents grows, has the median age of the city changed in a significant way?  If most of the population growth are caused by peopole immigrating to Denver in seek of job opportunities, does it mean that the city is growing younger over time? 
 * House ownership. Denver has observed one of the fastest growing housing markets in recent years.  Has home ownership decreased over time as the local real estate market gets "hotter" and gradually "out-of-reach"?
 * With the "me-too" movements, there has been more awareness and demand for gender equality in recent years.  How is Denver doing in this regard?  Is the pay gap between male and female getting smaller over time? 
-* As the city re-invents various neighborhoods, how has the neighborhoods popularity change for different age groups?  
-* As the city grows and industries expand, how has the income levels of different neighborhoods change?   
+* As the city re-invents various neighborhoods, how has the neighborhoods popularity changed for different age groups?  
+* As the city grows and industries expand, how has the income levels of various neighborhoods change?   
 
 
 ## Raw Data
@@ -35,7 +35,7 @@ To answer the questions raised in the "Introduction" section, I studied the data
 
 ###  **Age Profile Over Time**
 
-There are 481 census block groups represented in the data sets.  The bar chart below shows the average of the median age per each group across the three time horizons.   
+There are 481 census block groups represented in each of the data sets.  The bar chart below shows the average of the median age per each group across the three time horizons.   
 
 ![](images/age_by_gender.png)
 
@@ -62,11 +62,11 @@ H0: Denver's median age 2010_2014 = Denver's median age 2014_2018
 HA: Denver's median age 2010_2014 != Denver's median age 2014_2018
 ```
 
-For this test, I will choose a significance level of 5% and it is a two-tailed tests.  The p-value comes out to be 0.329 which is greater than the significance level.  Therefore we cannot rejected the null hypothesis that Denver's median age remained the same.   
+For this test, I chose a significance level of 5% and it is a two-tailed tests.  The p-value came out to be 0.329 which is greater than the significance level.  Therefore we cannot rejected the null hypothesis that Denver's median age remained the same.   
 
 ###  **Housing Profile Over Time**
 
-Another point I kept hearing is people from out-of-states have driven up the prices of local housing markets.  These are both people newly migrated to the city and out-of-state residents buying up second homes and converting them to Airbnb rental units.  To visualize the effects, I used box charts on the two calculated series. 
+Another point I kept hearing is people from out-of-states have driven up the prices of local housing markets.  These are both people newly migrated to the city and out-of-state residents buying second homes and converting them to Airbnb rental units.  To visualize the effects, I used box charts on the two calculated series. 
 
 ![](images/house_own.png)
 
@@ -90,15 +90,15 @@ The next chart shows the histogram of male median earnings versus female median 
 
 ![](images/income_by_gender.png)
 
-What's interesting here is - if I were to look at the median values (the green and the red vertical lines), the pay gap between male workers and female workers actually seems to be on the rise despite the increase awareness of gender inequality. 
+What's interesting here is - if I were to look at the median values (the green versus the red vertical lines), the pay gap between male workers and female workers actually seems to be on the rise despite the increased awareness of gender inequality. 
 
-Can we draw this conclusion?  Again Welch's t-test is called for.  I took the difference between the male median earnings and female median earnings for each of the two time periods (2010_2014, 2014_2018) and ran the test. The p-value for the following hypothesis is 0.844, which means we cannot reject the null hypothesis that the pay gap remained the same over time. 
+Can we draw this conclusion statistically?  Again Welch's t-test is called for.  I took the difference between the male median earnings and female median earnings for each of the two time periods (2010_2014, 2014_2018) and ran the test. The p-value for the following hypothesis is 0.844, which means we cannot reject the null hypothesis that the pay gap remained the same over time. 
 ```
 H0: Denver's gender pay gap 2010_2014 = 2014_2018
 HA: Denver's gender pay gap 2010_2014 != 2014_2018
 ```
 
-## Neighborhoods in changes
+## Neighborhoods Over Time
 
 In the last part, I would like to use small animated gif files to illustrate how neighborhoods gains or loses popularity over time amongst different age groups.  The original files rendered by the Folium package is an interactive .html file.  You can find a sample of this in the image folder. 
 
@@ -126,6 +126,6 @@ From this small study, I've gained better understanding of Denver and its change
 
 * Though we can see from the chart that retired people takes a bigger percentage of the population over time, we cannot draw a conclusion that the city is getting older from the statistical perspective. 
 * Though the house ownership percentage hasn't changed much, there is evidence that the housing affordability is getting worse over time. 
-* Earnings gap between male and female seems to get worse from chart, but again we cannot draw the same conclusion statistically. 
-* Over time, different neighborhoods in Denver gains or loses popularity with different age groups.  Stapleton has been consistently popular with families with children.  Most likely because of the newness, the good school districts, and the open areas and parks. Retired people seems to be drawn to Stapleton too, perhaps because of the same reasons of being closer to nature.  People in their 20s initially seems to like Stapleton, but over time moved on to the downtown near union station areas. 
-* From the income perspective, the Cherry Creek areas have always been where higher income earners reside.  Stapleton seems to be on the rise too.  
+* Earnings gap between male and female seems to get worse from chart, but we cannot draw the same conclusion statistically. 
+* Over time, different neighborhoods in Denver gains or loses popularity with different age groups.  Stapleton has been consistently popular with families with children.  Most likely because of the newness, the good school districts, and the open areas and parks. Retired people seems to be drawn to Stapleton too, perhaps because of the same reasons of being closer to nature.  People in their 20s initially seems to like Stapleton, but over time moved on to the downtown area near union station area. 
+* From the income perspective, the Cherry Creek and Hill Top areas have historically been where higher income earners reside.  Stapleton seems to be on the rise too.  
