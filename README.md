@@ -1,3 +1,5 @@
+![](images/CityPark_denver.jpg)
+
 # Denver Demographic Study
 
 ## Introduction 
@@ -112,7 +114,7 @@ For the first three age profile related gif illustration, the heat map across fr
 ### **The Seasoned (age greater than 65)**
 ![](images/65plus_chg.gif)
 
-Last, but not the least, the median income change by neighborhoods
+Last, but not the least, the median income change by neighborhoods:
 
 ### **Median Income** 
 
