@@ -13,8 +13,6 @@ data_inc = df.set_index('STFID')['MED_HH_INCOME']
 
 def style_function(feature):
     blk_grp = data_inc.get(int(feature['id']), None)
-    #print(blk_grp)
-    #print(type(blk_grp))
     return {
         'fillColor': '#gray' if blk_grp is None or math.isnan(blk_grp) else colorscale(blk_grp),
         'fillOpacity': 0.5,

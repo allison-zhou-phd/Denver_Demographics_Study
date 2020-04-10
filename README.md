@@ -35,7 +35,7 @@ To answer the questions raised in the "Introduction" section, I studied the data
 
 There are 481 census block groups represented in the data sets.  The bar chart below shows the average of the median age per each group across the three time horizons.   
 
-![Median Age By Gender](images/age_by_gender.png)
+![](images/age_by_gender.png)
 
 To help reading the data better, the same information is represented the below table. 
 
@@ -49,7 +49,7 @@ It seems that over the three time horizons, the median age has gone up for the o
 
 Since the mean doesn't quite capture the overall distribution, let's look at the age profile from a different angle - the percentage of population in each bucket.  Below is the side-by-side bar chart. 
 
-![Percentage by Age Group](images/age_by_group.png)
+![](images/age_by_group.png)
 
 As expected, the adult age bucket takes the chunk of the population.  It is more obvious now that the percentage of retired people has gone up over time, taking about 16% of the overall population for the 2014_2018 period.  This is in comparison with about 11.6% for the previous two time periods.  This seems to indicate that instead of getting younger, the City of Denver is actually getting older over time.   
 
@@ -66,11 +66,11 @@ For this test, I will choose a significance level of 5% and it is a two-tailed t
 
 Another point I kept hearing is people from out-of-states have driven up the prices of local housing markets.  These are both people newly migrated to the city and out-of-state residents buying up second homes and converting them to Airbnb rental units.  To visualize the effects, I used box charts on the two calculated series. 
 
-![House Ownership](images/house_own.png)
+![](images/house_own.png)
 
 First is the housing units occupied by owner.  Do we observe an obvious drop in the owner occupancy rate over time?  The box chart seem to say no.  Over the 3 time periods under study, the median of housing units occupied by owner appears to be stable at around 53%. 
 
-![House Ownership](images/house_afford.png)
+![](images/house_afford.png)
 
 What about the housing affordability?  Remember it is approximated by the ratio between median home value and median household income.  Looking across the three boxes, we can see that the median value dropped from 2006_2010 period to 2010_2014 period, yet picked up again for 2014_2018 period, with the last period observing the most outrageous outlier.  
 
@@ -86,7 +86,7 @@ Welch's t-test yields a p-value of 0.001, so we reject the null at 2.5% confiden
 
 The next chart shows the histogram of male median earnings versus female median earninings over the three time periods.  For each of the gender group, a median value is also plotted on the chart.  Green line represents the median for the male distribution and red line represents the median for the female distribution. 
 
-![Gender Pay Gap](images/income_by_gender.png)
+![](images/income_by_gender.png)
 
 What's interesting here is - if I were to look at the median values (the green and the red vertical lines), the pay gap between male workers and female workers actually seems to be on the rise despite the increase awareness of gender inequality. 
 
@@ -96,4 +96,24 @@ H0: Denver's gender pay gap 2010_2014 = 2014_2018
 HA: Denver's gender pay gap 2010_2014 != 2014_2018
 ```
 
-## Neighborhoods in 
+## Neighborhoods in changes
+
+In the last part, I would like to use small animated gif files to illustrate how neighborhoods gains or loses popularity over time amongst different age groups.  The original files rendered by the Folium package is an interactive .html file.  You can find a sample of this in the image folder. 
+
+For the first three age profile related gif illustration, the heat map across frames are done on the same scale to make the images comparable.  
+
+### **School Children (age less than 18)**
+
+![](images/school_chg.gif)
+
+### **Young Adult (age 20 to 29)**
+![](images/20plus_chg.gif)
+
+### **The Seasoned (age greater than 65)**
+![](images/65plus_chg.gif)
+
+Last, but not the least, the median income change by neighborhoods
+
+### **Median Income** 
+
+![](images/income_chg.gif)
