@@ -19,9 +19,9 @@ def plot_sideBySide_bar(df, ax, width, labels, Xticklabels, title):
             ax - axis with plot on it
     '''
     xlocs = np.arange(len(df))
-    ax.bar(xlocs-width, df.iloc[0,:], width, color='cornflowerblue', label =labels[0])
-    ax.bar(xlocs, df.iloc[1,:], width, color='hotpink', label =labels[1])
-    ax.bar(xlocs+width, df.iloc[2,:], width, color='red', label =labels[2])
+    ax.bar(xlocs-width, df.iloc[0,:], width, color='mediumaquamarine', label =labels[0])
+    ax.bar(xlocs, df.iloc[1,:], width, color='rebeccapurple', label =labels[1])
+    ax.bar(xlocs+width, df.iloc[2,:], width, color='tomato', label =labels[2])
     ax.set_xticks(ticks=range(len(df)))
     ax.set_xticklabels(Xticklabels)
     ax.yaxis.grid(True)
